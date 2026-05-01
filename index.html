@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cypress ATV & Cycle Service | Vernon, FL</title>
-    <meta name="description" content="Expert ATV, UTV, dirt bike, and small engine repairs in Vernon, Florida. Honest pricing • $125/hr labor • No parts upcharge">
-    <!-- Tailwind CSS CDN for modern look without build step -->
+    <meta name="description" content="Expert ATV, Side-by-Side (UTV), and Dirt Bike repairs in Vernon, Florida. Honest pricing • $125/hr labor • No parts upcharge">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -38,22 +37,22 @@
 <!-- SERVICES -->
 <section class="py-20 bg-zinc-900">
     <div class="max-w-6xl mx-auto px-6">
-        <h2 class="heading-font text-5xl font-semibold text-center mb-16">What We Fix</h2>
+        <h2 class="heading-font text-5xl font-semibold text-center mb-16">What We Specialize In</h2>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
                 <i class="fas fa-motorcycle text-5xl text-emerald-500 mb-6"></i>
-                <h3 class="text-2xl font-semibold mb-3">ATV & UTV Repair</h3>
-                <p class="text-zinc-400">Engine rebuilds, suspension, brakes, electrical — all major brands.</p>
+                <h3 class="text-2xl font-semibold mb-3">ATV Repair</h3>
+                <p class="text-zinc-400">Full diagnostics, engine rebuilds, suspension, brakes, electrical, and more for all major ATV brands.</p>
+            </div>
+            <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
+                <i class="fas fa-truck-pickup text-5xl text-emerald-500 mb-6"></i>
+                <h3 class="text-2xl font-semibold mb-3">Side-by-Side (UTV) Service</h3>
+                <p class="text-zinc-400">Complete repairs and maintenance for UTVs and Side-by-Sides — trails, work, and recreation.</p>
             </div>
             <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
                 <i class="fas fa-bicycle text-5xl text-emerald-500 mb-6"></i>
-                <h3 class="text-2xl font-semibold mb-3">Dirt Bike & Sport Bike</h3>
-                <p class="text-zinc-400">2-stroke & 4-stroke service, tuning, performance upgrades.</p>
-            </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
-                <i class="fas fa-tools text-5xl text-emerald-500 mb-6"></i>
-                <h3 class="text-2xl font-semibold mb-3">Small Engine & More</h3>
-                <p class="text-zinc-400">Lawn equipment, generators, and anything with a motor.</p>
+                <h3 class="text-2xl font-semibold mb-3">Dirt Bike Service</h3>
+                <p class="text-zinc-400">2-stroke & 4-stroke maintenance, tuning, chain & sprocket, suspension, and performance upgrades.</p>
             </div>
         </div>
     </div>
@@ -87,7 +86,7 @@
             <div class="space-y-8">
                 <div>
                     <label class="block text-sm mb-2">Describe your issue or service needed</label>
-                    <textarea id="description" rows="4" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white" placeholder="Example: 2022 Honda Foreman needs full engine rebuild..."></textarea>
+                    <textarea id="description" rows="4" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white" placeholder="Example: 2022 Honda Foreman 500 needs full engine rebuild..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-2 gap-6">
@@ -155,8 +154,6 @@
         document.getElementById('totalPrice').textContent = '$' + total.toFixed(0);
         document.getElementById('quoteResult').classList.remove('hidden');
     }
-
-    // Tailwind script already loaded via CDN
 </script>
 </body>
 </html>
