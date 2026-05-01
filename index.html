@@ -9,57 +9,92 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;600&display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
+        
+        body { 
+            font-family: 'Inter', system_ui, sans-serif; 
+            background: #0a0a0a;
+        }
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Cool Background Design */
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), #111;
+            background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.92)), 
+                        url('https://source.unsplash.com/random/1920x1080/?atv,dirt,trail,mud') center/cover no-repeat fixed;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(16, 185, 129, 0.08) 20px,
+                rgba(16, 185, 129, 0.08) 40px
+            );
+            pointer-events: none;
+        }
+
+        .card-hover:hover { 
+            transform: translateY(-12px) scale(1.02); 
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .section-bg {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
         }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
 
 <!-- HERO with Logo -->
-<header class="hero-bg min-h-screen flex items-center">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-        <!-- Company Logo -->
-        <div class="mb-8 flex justify-center">
-            <img src="https://i.imgur.com/placeholder-for-logo.png" 
+<header class="hero-bg min-h-screen flex items-center relative">
+    <div class="max-w-5xl mx-auto px-6 text-center z-10">
+        <!-- Company Logo - Using exact GitHub filename -->
+        <div class="mb-10 flex justify-center">
+            <img src="48972706-9F12-4F85-A188-CA50E857E173.png" 
                  alt="Cypress ATV & Cycle Service Logo" 
-                 class="max-w-[650px] w-full h-auto drop-shadow-2xl">
+                 class="max-w-[680px] w-full h-auto drop-shadow-2xl">
         </div>
         
-        <p class="text-2xl md:text-3xl text-emerald-400 mb-10">Vernon, Florida • Built for the Trails</p>
+        <p class="text-2xl md:text-3xl text-emerald-400 mb-10 tracking-wide">VERNON, FLORIDA • BUILT FOR THE TRAILS</p>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+18508498803" class="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-4 rounded-xl text-xl font-semibold flex items-center justify-center gap-3">
+        <div class="flex flex-col sm:flex-row gap-5 justify-center">
+            <a href="tel:+18508498803" 
+               class="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-2xl text-xl font-semibold flex items-center justify-center gap-3 shadow-lg">
                 <i class="fas fa-phone"></i> (850) 849-8803
             </a>
-            <a href="#quote" class="bg-white text-zinc-900 hover:bg-zinc-100 px-10 py-4 rounded-xl text-xl font-semibold">Get Instant Quote</a>
+            <a href="#quote" 
+               class="bg-white text-zinc-900 hover:bg-amber-400 px-10 py-5 rounded-2xl text-xl font-semibold shadow-lg">
+                GET INSTANT QUOTE
+            </a>
         </div>
         
-        <p class="mt-8 text-lg">4046 Dorch Circle • Vernon, FL 32462</p>
+        <p class="mt-10 text-lg font-medium">4046 Dorch Circle • Vernon, FL 32462</p>
     </div>
 </header>
 
 <!-- SERVICES -->
-<section class="py-20 bg-zinc-900">
+<section class="py-20 section-bg">
     <div class="max-w-6xl mx-auto px-6">
-        <h2 class="heading-font text-5xl font-semibold text-center mb-16">What We Specialize In</h2>
+        <h2 class="heading-font text-5xl font-semibold text-center mb-16 text-white">What We Specialize In</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
-                <i class="fas fa-motorcycle text-5xl text-emerald-500 mb-6"></i>
-                <h3 class="text-2xl font-semibold mb-3">ATV Repair</h3>
-                <p class="text-zinc-400">Full diagnostics, engine rebuilds, suspension, brakes, electrical for all major ATV brands.</p>
+            <div class="bg-zinc-900 p-10 rounded-3xl card-hover border border-emerald-900/50">
+                <i class="fas fa-motorcycle text-6xl text-emerald-500 mb-8"></i>
+                <h3 class="text-3xl font-semibold mb-4">ATV Repair</h3>
+                <p class="text-zinc-400 leading-relaxed">Full diagnostics, engine rebuilds, suspension, brakes, electrical and more for all major ATV brands.</p>
             </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
-                <i class="fas fa-truck-pickup text-5xl text-emerald-500 mb-6"></i>
-                <h3 class="text-2xl font-semibold mb-3">Side-by-Side (UTV) Service</h3>
-                <p class="text-zinc-400">Complete repairs and maintenance for UTVs and Side-by-Sides.</p>
+            <div class="bg-zinc-900 p-10 rounded-3xl card-hover border border-emerald-900/50">
+                <i class="fas fa-truck-pickup text-6xl text-emerald-500 mb-8"></i>
+                <h3 class="text-3xl font-semibold mb-4">Side-by-Side (UTV)</h3>
+                <p class="text-zinc-400 leading-relaxed">Complete repairs and maintenance for UTVs and Side-by-Sides — work or play.</p>
             </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
-                <i class="fas fa-bicycle text-5xl text-emerald-500 mb-6"></i>
-                <h3 class="text-2xl font-semibold mb-3">Dirt Bike Service</h3>
-                <p class="text-zinc-400">2-stroke & 4-stroke maintenance, tuning, suspension, and performance upgrades.</p>
+            <div class="bg-zinc-900 p-10 rounded-3xl card-hover border border-emerald-900/50">
+                <i class="fas fa-bicycle text-6xl text-emerald-500 mb-8"></i>
+                <h3 class="text-3xl font-semibold mb-4">Dirt Bike Service</h3>
+                <p class="text-zinc-400 leading-relaxed">2-stroke & 4-stroke maintenance, tuning, suspension, chain work, and performance upgrades.</p>
             </div>
         </div>
     </div>
@@ -68,62 +103,64 @@
 <!-- PRICING TRANSPARENCY -->
 <section class="py-20 bg-black">
     <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="heading-font text-5xl font-semibold mb-8">Straightforward Pricing • No Surprises</h2>
+        <h2 class="heading-font text-5xl font-semibold mb-12">Straightforward Pricing • No Surprises</h2>
         <div class="grid md:grid-cols-2 gap-10">
-            <div class="bg-zinc-900 p-10 rounded-3xl border border-emerald-900">
-                <div class="text-emerald-400 text-6xl mb-4">$125</div>
-                <h3 class="text-3xl font-semibold mb-2">Per Hour Labor</h3>
-                <p class="text-zinc-400">Most jobs require a minimum of 2 hours.<br>Larger projects quoted upfront.</p>
+            <div class="bg-zinc-900 p-12 rounded-3xl border border-emerald-800 card-hover">
+                <div class="text-emerald-400 text-7xl font-bold mb-4">$125</div>
+                <h3 class="text-3xl font-semibold mb-6">Hourly Labor Rate</h3>
+                <p class="text-zinc-400 text-lg">Most jobs start at a minimum of 2 hours.<br>Larger projects quoted upfront.</p>
             </div>
-            <div class="bg-zinc-900 p-10 rounded-3xl border border-emerald-900">
-                <h3 class="text-3xl font-semibold mb-6">Parts Pricing</h3>
-                <p class="text-xl text-emerald-400 mb-4">✅ Real-time supplier pricing + shipping</p>
-                <p class="text-zinc-400">We charge you exactly what we pay — <span class="font-semibold text-white">NO markup, NO upcharge</span>.</p>
+            <div class="bg-zinc-900 p-12 rounded-3xl border border-emerald-800 card-hover">
+                <h3 class="text-3xl font-semibold mb-8">Parts Pricing</h3>
+                <p class="text-2xl text-emerald-400 mb-6">✅ Real-time supplier cost + shipping</p>
+                <p class="text-zinc-400 text-lg">We charge you <span class="font-bold text-white">exactly what we pay</span> — NO markup, NO upcharge.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- QUOTE CALCULATOR -->
-<section id="quote" class="py-20 bg-zinc-900">
+<section id="quote" class="py-24 bg-zinc-900">
     <div class="max-w-3xl mx-auto px-6">
         <h2 class="heading-font text-5xl font-semibold text-center mb-12">Get a Quote Now</h2>
         
-        <div class="bg-zinc-800 rounded-3xl p-10">
+        <div class="bg-zinc-800/80 backdrop-blur rounded-3xl p-12 border border-zinc-700">
             <div class="space-y-8">
                 <div>
-                    <label class="block text-sm mb-2">Describe your issue or service needed</label>
-                    <textarea id="description" rows="4" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white" placeholder="Example: 2022 Honda Foreman needs full engine rebuild..."></textarea>
+                    <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Describe your issue or service needed</label>
+                    <textarea id="description" rows="4" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white placeholder-zinc-500" 
+                              placeholder="Example: 2022 Honda Foreman 500 needs full engine rebuild..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm mb-2">Estimated Labor Hours</label>
-                        <input type="number" id="hours" value="2" min="2" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white text-2xl">
-                        <p class="text-xs text-zinc-500 mt-1">Minimum 2 hours</p>
+                        <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Estimated Labor Hours</label>
+                        <input type="number" id="hours" value="2" min="2" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white text-3xl">
+                        <p class="text-xs text-emerald-400 mt-2">Minimum 2 hours</p>
                     </div>
                     <div>
-                        <label class="block text-sm mb-2">Estimated Parts Cost (supplier quote)</label>
-                        <input type="number" id="parts" value="0" min="0" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white text-2xl">
+                        <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Estimated Parts Cost</label>
+                        <input type="number" id="parts" value="0" min="0" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white text-3xl">
                     </div>
                 </div>
 
                 <button onclick="calculateQuote()" 
-                        class="w-full bg-emerald-600 hover:bg-emerald-500 py-6 rounded-2xl text-2xl font-semibold flex items-center justify-center gap-3">
-                    <i class="fas fa-calculator"></i> CALCULATE QUOTE
+                        class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 py-7 rounded-2xl text-2xl font-bold tracking-wider flex items-center justify-center gap-4 shadow-xl">
+                    <i class="fas fa-calculator"></i> CALCULATE MY QUOTE
                 </button>
 
-                <div id="quoteResult" class="hidden mt-8 p-8 bg-black rounded-3xl border border-emerald-700 text-center">
-                    <p class="text-emerald-400 text-sm mb-2">ESTIMATED TOTAL</p>
-                    <div id="totalPrice" class="text-6xl font-bold text-white mb-6">$0</div>
-                    <div class="text-zinc-400 space-y-2 text-left max-w-sm mx-auto">
-                        <p>Labor: <span id="laborShow" class="float-right"></span></p>
-                        <p>Parts + Shipping: <span id="partsShow" class="float-right"></span></p>
-                        <p class="pt-4 border-t border-zinc-700 font-semibold">Transparent • No upcharge on parts</p>
+                <div id="quoteResult" class="hidden mt-10 p-10 bg-black rounded-3xl border border-emerald-700 text-center">
+                    <p class="text-emerald-400 uppercase tracking-widest text-sm mb-3">Estimated Total</p>
+                    <div id="totalPrice" class="text-7xl font-bold text-white mb-8">$0</div>
+                    <div class="text-left max-w-md mx-auto space-y-3 text-zinc-300">
+                        <p>Labor: <span id="laborShow" class="float-right font-medium"></span></p>
+                        <p>Parts + Shipping: <span id="partsShow" class="float-right font-medium"></span></p>
                     </div>
+                    <p class="pt-6 text-emerald-400 font-semibold">Transparent • No parts upcharge</p>
+                    
                     <button onclick="window.location.href='tel:+18508498803'" 
-                            class="mt-10 w-full bg-white text-zinc-900 py-5 rounded-2xl font-semibold text-xl">
-                        Call (850) 849-8803 to Confirm & Book
+                            class="mt-12 w-full bg-white text-zinc-900 py-6 rounded-2xl font-bold text-xl shadow-lg">
+                        📞 CALL (850) 849-8803 TO BOOK
                     </button>
                 </div>
             </div>
@@ -136,7 +173,7 @@
     <div class="max-w-4xl mx-auto px-6 text-center">
         <h2 class="heading-font text-5xl font-semibold mb-8">Ready to Ride Again?</h2>
         <p class="text-2xl mb-10">4046 Dorch Circle<br>Vernon, Florida 32462</p>
-        <a href="tel:+18508498803" class="inline-flex items-center gap-4 bg-emerald-600 hover:bg-emerald-500 text-white text-3xl px-12 py-6 rounded-3xl">
+        <a href="tel:+18508498803" class="inline-flex items-center gap-4 bg-emerald-600 hover:bg-emerald-500 text-white text-3xl px-16 py-7 rounded-3xl shadow-2xl">
             <i class="fas fa-phone-volume"></i> (850) 849-8803
         </a>
         <p class="mt-12 text-zinc-500">Monday–Friday 8AM–5PM • Saturday by appointment</p>
