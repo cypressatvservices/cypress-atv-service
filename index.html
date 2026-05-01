@@ -16,7 +16,6 @@
         }
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
         
-        /* Cool Background Design */
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.92)), 
                         url('https://source.unsplash.com/random/1920x1080/?atv,dirt,trail,mud') center/cover no-repeat fixed;
@@ -41,10 +40,6 @@
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
             transition: all 0.4s ease;
         }
-
-        .section-bg {
-            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-        }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
@@ -52,49 +47,44 @@
 <!-- HERO with Logo -->
 <header class="hero-bg min-h-screen flex items-center relative">
     <div class="max-w-5xl mx-auto px-6 text-center z-10">
-        <!-- Company Logo - Using exact GitHub filename -->
         <div class="mb-10 flex justify-center">
             <img src="48972706-9F12-4F85-A188-CA50E857E173.png" 
                  alt="Cypress ATV & Cycle Service Logo" 
                  class="max-w-[680px] w-full h-auto drop-shadow-2xl">
         </div>
-        
         <p class="text-2xl md:text-3xl text-emerald-400 mb-10 tracking-wide">VERNON, FLORIDA • BUILT FOR THE TRAILS</p>
         
         <div class="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href="tel:+18508498803" 
-               class="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-2xl text-xl font-semibold flex items-center justify-center gap-3 shadow-lg">
+            <a href="tel:+18508498803" class="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-2xl text-xl font-semibold flex items-center justify-center gap-3 shadow-lg">
                 <i class="fas fa-phone"></i> (850) 849-8803
             </a>
-            <a href="#quote" 
-               class="bg-white text-zinc-900 hover:bg-amber-400 px-10 py-5 rounded-2xl text-xl font-semibold shadow-lg">
+            <a href="#quote" class="bg-white text-zinc-900 hover:bg-amber-400 px-10 py-5 rounded-2xl text-xl font-semibold shadow-lg">
                 GET INSTANT QUOTE
             </a>
         </div>
-        
         <p class="mt-10 text-lg font-medium">4046 Dorch Circle • Vernon, FL 32462</p>
     </div>
 </header>
 
 <!-- SERVICES -->
-<section class="py-20 section-bg">
+<section class="py-20 bg-zinc-900">
     <div class="max-w-6xl mx-auto px-6">
-        <h2 class="heading-font text-5xl font-semibold text-center mb-16 text-white">What We Specialize In</h2>
+        <h2 class="heading-font text-5xl font-semibold text-center mb-16">What We Specialize In</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-zinc-900 p-10 rounded-3xl card-hover border border-emerald-900/50">
+            <div class="bg-zinc-800 p-10 rounded-3xl card-hover border border-emerald-900/50">
                 <i class="fas fa-motorcycle text-6xl text-emerald-500 mb-8"></i>
                 <h3 class="text-3xl font-semibold mb-4">ATV Repair</h3>
-                <p class="text-zinc-400 leading-relaxed">Full diagnostics, engine rebuilds, suspension, brakes, electrical and more for all major ATV brands.</p>
+                <p class="text-zinc-400">Full diagnostics, engine rebuilds, suspension, brakes & electrical.</p>
             </div>
-            <div class="bg-zinc-900 p-10 rounded-3xl card-hover border border-emerald-900/50">
+            <div class="bg-zinc-800 p-10 rounded-3xl card-hover border border-emerald-900/50">
                 <i class="fas fa-truck-pickup text-6xl text-emerald-500 mb-8"></i>
                 <h3 class="text-3xl font-semibold mb-4">Side-by-Side (UTV)</h3>
-                <p class="text-zinc-400 leading-relaxed">Complete repairs and maintenance for UTVs and Side-by-Sides — work or play.</p>
+                <p class="text-zinc-400">Complete repairs and maintenance for work or play.</p>
             </div>
-            <div class="bg-zinc-900 p-10 rounded-3xl card-hover border border-emerald-900/50">
+            <div class="bg-zinc-800 p-10 rounded-3xl card-hover border border-emerald-900/50">
                 <i class="fas fa-bicycle text-6xl text-emerald-500 mb-8"></i>
                 <h3 class="text-3xl font-semibold mb-4">Dirt Bike Service</h3>
-                <p class="text-zinc-400 leading-relaxed">2-stroke & 4-stroke maintenance, tuning, suspension, chain work, and performance upgrades.</p>
+                <p class="text-zinc-400">2-stroke & 4-stroke tuning, suspension & performance work.</p>
             </div>
         </div>
     </div>
@@ -108,63 +98,67 @@
             <div class="bg-zinc-900 p-12 rounded-3xl border border-emerald-800 card-hover">
                 <div class="text-emerald-400 text-7xl font-bold mb-4">$125</div>
                 <h3 class="text-3xl font-semibold mb-6">Hourly Labor Rate</h3>
-                <p class="text-zinc-400 text-lg">Most jobs start at a minimum of 2 hours.<br>Larger projects quoted upfront.</p>
+                <p class="text-zinc-400 text-lg">Minimum 2 hours • Larger jobs quoted in full</p>
             </div>
             <div class="bg-zinc-900 p-12 rounded-3xl border border-emerald-800 card-hover">
                 <h3 class="text-3xl font-semibold mb-8">Parts Pricing</h3>
                 <p class="text-2xl text-emerald-400 mb-6">✅ Real-time supplier cost + shipping</p>
-                <p class="text-zinc-400 text-lg">We charge you <span class="font-bold text-white">exactly what we pay</span> — NO markup, NO upcharge.</p>
+                <p class="text-zinc-400 text-lg">We charge you <span class="font-bold text-white">exactly what we pay</span> — NO markup.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- QUOTE CALCULATOR -->
+<!-- SMART QUOTE CALCULATOR -->
 <section id="quote" class="py-24 bg-zinc-900">
     <div class="max-w-3xl mx-auto px-6">
-        <h2 class="heading-font text-5xl font-semibold text-center mb-12">Get a Quote Now</h2>
+        <h2 class="heading-font text-5xl font-semibold text-center mb-12">Get a Smart Quote Now</h2>
         
         <div class="bg-zinc-800/80 backdrop-blur rounded-3xl p-12 border border-zinc-700">
             <div class="space-y-8">
                 <div>
-                    <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Describe your issue or service needed</label>
-                    <textarea id="description" rows="4" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white placeholder-zinc-500" 
-                              placeholder="Example: 2022 Honda Foreman 500 needs full engine rebuild..."></textarea>
+                    <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Machine Type</label>
+                    <select id="machineType" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white text-lg">
+                        <option value="">Select Machine</option>
+                        <option value="atv">ATV</option>
+                        <option value="utv">Side-by-Side (UTV)</option>
+                        <option value="dirtbike">Dirt Bike</option>
+                    </select>
                 </div>
 
-                <div class="grid grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Estimated Labor Hours</label>
-                        <input type="number" id="hours" value="2" min="2" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white text-3xl">
-                        <p class="text-xs text-emerald-400 mt-2">Minimum 2 hours</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Estimated Parts Cost</label>
-                        <input type="number" id="parts" value="0" min="0" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white text-3xl">
-                    </div>
+                <div>
+                    <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Describe the Problem (be as detailed as possible)</label>
+                    <textarea id="description" rows="5" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white placeholder-zinc-500" 
+                              placeholder="Example: 2022 Honda Foreman 500 makes knocking noise and loses power on hills..."></textarea>
                 </div>
 
-                <button onclick="calculateQuote()" 
+                <div>
+                    <label class="block text-sm uppercase tracking-widest mb-3 text-zinc-400">Estimated Parts Cost (from supplier quote, if known)</label>
+                    <input type="number" id="parts" value="0" min="0" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-6 text-white text-3xl">
+                </div>
+
+                <button onclick="calculateSmartQuote()" 
                         class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 py-7 rounded-2xl text-2xl font-bold tracking-wider flex items-center justify-center gap-4 shadow-xl">
-                    <i class="fas fa-calculator"></i> CALCULATE MY QUOTE
+                    <i class="fas fa-calculator"></i> GET ESTIMATED QUOTE
                 </button>
 
                 <div id="quoteResult" class="hidden mt-10 p-10 bg-black rounded-3xl border border-emerald-700 text-center">
-                    <p class="text-emerald-400 uppercase tracking-widest text-sm mb-3">Estimated Total</p>
+                    <p class="text-emerald-400 uppercase tracking-widest text-sm mb-3">Smart Estimate Based on Your Description</p>
                     <div id="totalPrice" class="text-7xl font-bold text-white mb-8">$0</div>
                     <div class="text-left max-w-md mx-auto space-y-3 text-zinc-300">
-                        <p>Labor: <span id="laborShow" class="float-right font-medium"></span></p>
-                        <p>Parts + Shipping: <span id="partsShow" class="float-right font-medium"></span></p>
+                        <p id="laborLine" class="font-medium"></p>
+                        <p id="partsLine" class="font-medium"></p>
                     </div>
-                    <p class="pt-6 text-emerald-400 font-semibold">Transparent • No parts upcharge</p>
+                    <p class="pt-6 text-emerald-400 font-semibold">This is an estimate only — final quote after inspection</p>
                     
                     <button onclick="window.location.href='tel:+18508498803'" 
                             class="mt-12 w-full bg-white text-zinc-900 py-6 rounded-2xl font-bold text-xl shadow-lg">
-                        📞 CALL (850) 849-8803 TO BOOK
+                        📞 CALL (850) 849-8803 TO CONFIRM & BOOK
                     </button>
                 </div>
             </div>
         </div>
+        <p class="text-center text-zinc-500 text-sm mt-8">Our system uses typical repair times for powersports machines to give you a realistic starting point.</p>
     </div>
 </section>
 
@@ -185,16 +179,56 @@
 </footer>
 
 <script>
-    function calculateQuote() {
-        const hours = parseFloat(document.getElementById('hours').value) || 2;
+    function calculateSmartQuote() {
+        const machine = document.getElementById('machineType').value;
+        const desc = document.getElementById('description').value.toLowerCase().trim();
         const parts = parseFloat(document.getElementById('parts').value) || 0;
         const laborRate = 125;
-        
+        let hours = 2; // minimum
+
+        if (!machine) {
+            alert("Please select your machine type for a better estimate.");
+            return;
+        }
+
+        // Smart keyword-based estimation (realistic for powersports)
+        const keywords = {
+            rebuild: 8,
+            engine: 6,
+            top: 5,
+            bottom: 10,
+            knocking: 6,
+            power: 5,
+            suspension: 4,
+            fork: 5,
+            brake: 3,
+            belt: 2.5,
+            tire: 1.5,
+            oil: 1.5,
+            service: 2,
+            tune: 3,
+            electrical: 4
+        };
+
+        let estimatedHours = 3; // base
+
+        for (let [key, val] of Object.entries(keywords)) {
+            if (desc.includes(key)) {
+                estimatedHours = Math.max(estimatedHours, val);
+            }
+        }
+
+        // Adjust slightly by machine type
+        if (machine === "utv" && desc.includes("engine") || desc.includes("rebuild")) estimatedHours += 2;
+        if (machine === "dirtbike" && desc.includes("top")) estimatedHours = Math.max(estimatedHours, 4);
+
+        hours = Math.max(2, Math.round(estimatedHours * 10) / 10); // round to 1 decimal
+
         const laborCost = hours * laborRate;
         const total = laborCost + parts;
-        
-        document.getElementById('laborShow').textContent = '$' + laborCost.toFixed(0) + ' (' + hours + ' hrs @ $125/hr)';
-        document.getElementById('partsShow').textContent = '$' + parts.toFixed(0) + ' (parts + shipping)';
+
+        document.getElementById('laborLine').innerHTML = `Labor: <span class="float-right">$${laborCost.toFixed(0)} (${hours} hrs @ $125/hr)</span>`;
+        document.getElementById('partsLine').innerHTML = `Parts + Shipping: <span class="float-right">$${parts.toFixed(0)}</span>`;
         document.getElementById('totalPrice').textContent = '$' + total.toFixed(0);
         document.getElementById('quoteResult').classList.remove('hidden');
     }
