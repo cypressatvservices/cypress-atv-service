@@ -12,25 +12,32 @@
         body { font-family: 'Inter', system_ui, sans-serif; }
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://source.unsplash.com/random/1920x1080/?atv,dirtbike,trail') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), #111;
         }
-        .card-hover:hover { transform: translateY(-8px); transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
 
-<!-- HERO -->
-<header class="hero-bg h-screen flex items-center">
+<!-- HERO with Logo -->
+<header class="hero-bg min-h-screen flex items-center">
     <div class="max-w-5xl mx-auto px-6 text-center">
-        <h1 class="heading-font text-6xl md:text-7xl font-semibold tracking-tighter mb-4">CYPRESS ATV & CYCLE SERVICE</h1>
-        <p class="text-2xl md:text-3xl text-emerald-400 mb-8">Vernon, Florida • Built for the Trails</p>
+        <!-- Company Logo -->
+        <div class="mb-8 flex justify-center">
+            <img src="https://i.imgur.com/placeholder-for-logo.png" 
+                 alt="Cypress ATV & Cycle Service Logo" 
+                 class="max-w-[650px] w-full h-auto drop-shadow-2xl">
+        </div>
+        
+        <p class="text-2xl md:text-3xl text-emerald-400 mb-10">Vernon, Florida • Built for the Trails</p>
+        
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+18508498803" class="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-4 rounded-xl text-xl font-semibold flex items-center justify-center gap-3">
                 <i class="fas fa-phone"></i> (850) 849-8803
             </a>
             <a href="#quote" class="bg-white text-zinc-900 hover:bg-zinc-100 px-10 py-4 rounded-xl text-xl font-semibold">Get Instant Quote</a>
         </div>
-        <p class="mt-6 text-lg">4046 Dorch Circle • Vernon, FL 32462</p>
+        
+        <p class="mt-8 text-lg">4046 Dorch Circle • Vernon, FL 32462</p>
     </div>
 </header>
 
@@ -42,17 +49,17 @@
             <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
                 <i class="fas fa-motorcycle text-5xl text-emerald-500 mb-6"></i>
                 <h3 class="text-2xl font-semibold mb-3">ATV Repair</h3>
-                <p class="text-zinc-400">Full diagnostics, engine rebuilds, suspension, brakes, electrical, and more for all major ATV brands.</p>
+                <p class="text-zinc-400">Full diagnostics, engine rebuilds, suspension, brakes, electrical for all major ATV brands.</p>
             </div>
             <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
                 <i class="fas fa-truck-pickup text-5xl text-emerald-500 mb-6"></i>
                 <h3 class="text-2xl font-semibold mb-3">Side-by-Side (UTV) Service</h3>
-                <p class="text-zinc-400">Complete repairs and maintenance for UTVs and Side-by-Sides — trails, work, and recreation.</p>
+                <p class="text-zinc-400">Complete repairs and maintenance for UTVs and Side-by-Sides.</p>
             </div>
             <div class="bg-zinc-800 p-8 rounded-3xl card-hover border border-zinc-700">
                 <i class="fas fa-bicycle text-5xl text-emerald-500 mb-6"></i>
                 <h3 class="text-2xl font-semibold mb-3">Dirt Bike Service</h3>
-                <p class="text-zinc-400">2-stroke & 4-stroke maintenance, tuning, chain & sprocket, suspension, and performance upgrades.</p>
+                <p class="text-zinc-400">2-stroke & 4-stroke maintenance, tuning, suspension, and performance upgrades.</p>
             </div>
         </div>
     </div>
@@ -66,12 +73,12 @@
             <div class="bg-zinc-900 p-10 rounded-3xl border border-emerald-900">
                 <div class="text-emerald-400 text-6xl mb-4">$125</div>
                 <h3 class="text-3xl font-semibold mb-2">Per Hour Labor</h3>
-                <p class="text-zinc-400">Most jobs require a minimum of 2 hours.<br>Big projects can take days or weeks — quoted upfront.</p>
+                <p class="text-zinc-400">Most jobs require a minimum of 2 hours.<br>Larger projects quoted upfront.</p>
             </div>
             <div class="bg-zinc-900 p-10 rounded-3xl border border-emerald-900">
                 <h3 class="text-3xl font-semibold mb-6">Parts Pricing</h3>
                 <p class="text-xl text-emerald-400 mb-4">✅ Real-time supplier pricing + shipping</p>
-                <p class="text-zinc-400">We charge you exactly what we pay — <span class="font-semibold text-white">NO markup, NO upcharge</span>. You only pay actual shipping cost.</p>
+                <p class="text-zinc-400">We charge you exactly what we pay — <span class="font-semibold text-white">NO markup, NO upcharge</span>.</p>
             </div>
         </div>
     </div>
@@ -86,7 +93,7 @@
             <div class="space-y-8">
                 <div>
                     <label class="block text-sm mb-2">Describe your issue or service needed</label>
-                    <textarea id="description" rows="4" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white" placeholder="Example: 2022 Honda Foreman 500 needs full engine rebuild..."></textarea>
+                    <textarea id="description" rows="4" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white" placeholder="Example: 2022 Honda Foreman needs full engine rebuild..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-2 gap-6">
@@ -96,7 +103,7 @@
                         <p class="text-xs text-zinc-500 mt-1">Minimum 2 hours</p>
                     </div>
                     <div>
-                        <label class="block text-sm mb-2">Estimated Parts Cost (from supplier)</label>
+                        <label class="block text-sm mb-2">Estimated Parts Cost (supplier quote)</label>
                         <input type="number" id="parts" value="0" min="0" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl p-5 text-white text-2xl">
                     </div>
                 </div>
