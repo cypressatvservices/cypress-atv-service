@@ -8,28 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
-        body { 
-            font-family: 'Inter', system_ui, sans-serif; 
-            background: #111827;
-        }
+        body { font-family: 'Inter', system_ui, sans-serif; }
         .heading { font-family: 'Space Grotesk', sans-serif; }
-        
-        /* Cool Tire/Mud Background */
-        .bg-trail {
-            background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)), 
-                        url('https://source.unsplash.com/random/1920x1080/?mud,atv,tire,tread,dirt') center/cover fixed;
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://source.unsplash.com/random/1920x1080/?atv,dirt,trail') center/cover;
         }
+        .card { transition: all 0.4s ease; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3); }
     </style>
 </head>
-<body class="text-zinc-100">
+<body class="bg-zinc-950 text-zinc-200">
 
 <!-- HERO -->
-<header class="bg-trail min-h-screen flex flex-col items-center justify-center text-center px-4 py-12">
+<header class="hero min-h-screen flex flex-col items-center justify-center text-center px-4">
     <img src="48972706-9F12-4F85-A188-CA50E857E173.png" alt="Cypress Logo" class="max-w-[320px] md:max-w-[550px] mx-auto mb-8 drop-shadow-2xl">
     <p class="text-emerald-400 text-2xl md:text-3xl mb-10 tracking-wider">VERNON, FL • BUILT FOR THE TRAILS</p>
     <div class="flex flex-col sm:flex-row gap-4 w-full max-w-xs mx-auto">
         <a href="tel:+18508498803" class="flex-1 bg-emerald-600 hover:bg-emerald-500 py-4 rounded-2xl text-lg font-semibold flex items-center justify-center gap-3">📞 (850) 849-8803</a>
-        <a href="#quote" class="flex-1 bg-white text-zinc-900 hover:bg-amber-300 py-4 rounded-2xl text-lg font-semibold">GET QUOTE</a>
+        <a href="#quote" class="flex-1 bg-white text-black hover:bg-amber-300 py-4 rounded-2xl text-lg font-semibold">GET QUOTE</a>
     </div>
     <p class="mt-12 text-sm">4046 Dorch Circle, Vernon, FL 32462</p>
 </header>
@@ -37,42 +33,42 @@
 <!-- Services -->
 <section class="py-20 bg-zinc-900">
     <div class="max-w-6xl mx-auto px-6">
-        <h2 class="heading text-5xl font-bold text-center mb-16 text-white">Our Specialties</h2>
+        <h2 class="heading text-5xl font-bold text-center mb-16">Our Specialties</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-zinc-800 p-8 rounded-3xl card border border-zinc-700 hover:border-emerald-500">
+            <div class="bg-zinc-800 p-8 rounded-3xl card border border-zinc-700">
                 <i class="fas fa-motorcycle text-6xl text-emerald-500 mb-6"></i>
                 <h3 class="text-3xl font-semibold mb-4">ATV Repair</h3>
-                <p class="text-zinc-300">Engine rebuilds, suspension, brakes, and full diagnostics.</p>
+                <p class="text-zinc-400">Engine rebuilds, suspension, brakes, and full diagnostics.</p>
             </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl card border border-zinc-700 hover:border-emerald-500">
+            <div class="bg-zinc-800 p-8 rounded-3xl card border border-zinc-700">
                 <i class="fas fa-truck-pickup text-6xl text-emerald-500 mb-6"></i>
                 <h3 class="text-3xl font-semibold mb-4">Side-by-Side (UTV)</h3>
-                <p class="text-zinc-300">Complete service for work and recreation machines.</p>
+                <p class="text-zinc-400">Complete service for work and recreation machines.</p>
             </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl card border border-zinc-700 hover:border-emerald-500">
+            <div class="bg-zinc-800 p-8 rounded-3xl card border border-zinc-700">
                 <i class="fas fa-bicycle text-6xl text-emerald-500 mb-6"></i>
                 <h3 class="text-3xl font-semibold mb-4">Dirt Bike Service</h3>
-                <p class="text-zinc-300">2 & 4 stroke tuning, suspension, and performance work.</p>
+                <p class="text-zinc-400">2 & 4 stroke tuning, suspension, and performance work.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Quote -->
-<section id="quote" class="py-20 bg-zinc-800">
+<!-- Quote Tool -->
+<section id="quote" class="py-20 bg-black">
     <div class="max-w-md mx-auto px-6">
         <h2 class="heading text-4xl font-bold text-center mb-10">Get Detailed Quote</h2>
-        <select id="machine" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-5 mb-6 text-lg text-white">
+        <select id="machine" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-5 mb-6 text-lg">
             <option value="">Select Machine Type</option>
             <option value="atv">ATV</option>
             <option value="utv">Side-by-Side (UTV)</option>
             <option value="dirtbike">Dirt Bike</option>
         </select>
-        <textarea id="desc" rows="6" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-6 mb-6 text-white" placeholder="Describe the issue..."></textarea>
+        <textarea id="desc" rows="6" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-6 mb-6" placeholder="Describe the issue..."></textarea>
         <button onclick="generateDetailedQuote()" class="w-full bg-emerald-600 py-5 rounded-2xl text-xl font-semibold">ANALYZE & QUOTE</button>
 
         <div id="result" class="hidden mt-12 p-8 bg-zinc-900 rounded-3xl border border-emerald-700">
-            <div id="details" class="space-y-4 text-zinc-200"></div>
+            <div id="details" class="space-y-4 text-zinc-300"></div>
             <div id="grandTotal" class="text-5xl font-bold text-emerald-400 mt-10 text-center"></div>
             <div class="mt-8 p-4 bg-amber-950 rounded-2xl text-xs text-amber-400 border border-amber-800">
                 ⚠️ This is a close approximation only. A technician must inspect the machine for accurate diagnosis and final pricing.
@@ -86,6 +82,7 @@
 <section class="py-20 bg-zinc-900">
     <div class="max-w-4xl mx-auto px-6">
         <h2 class="heading text-4xl font-bold text-center mb-12">What Riders Say</h2>
+        
         <div id="reviewsList" class="space-y-8 mb-12">
             <div class="bg-zinc-800 p-8 rounded-3xl">
                 <p class="italic">"Best ATV shop in the area. Fixed my TRX fast and honest pricing!"</p>
@@ -97,8 +94,9 @@
             </div>
         </div>
 
+        <!-- Leave Review Form -->
         <div class="bg-zinc-800 p-8 rounded-3xl">
-            <h3 class="text-2xl font-semibold mb-6">Leave a Review</h3>
+            <h3 class="text-2xl font-semibold mb-6 text-center">Leave Your Review</h3>
             <input id="reviewName" type="text" placeholder="Your Name" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-4 mb-4 text-white">
             <textarea id="reviewText" rows="4" placeholder="Write your review here..." class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-4 mb-6 text-white"></textarea>
             <button onclick="submitReview()" class="w-full bg-emerald-600 py-4 rounded-2xl text-lg font-semibold">Submit Review</button>
@@ -114,7 +112,7 @@
     </a>
 </section>
 
-<footer class="py-12 text-center text-zinc-400 bg-black">
+<footer class="py-12 text-center text-zinc-500 bg-black">
     © 2026 Cypress ATV & Cycle Service • Vernon, FL
 </footer>
 
@@ -124,22 +122,36 @@ function generateDetailedQuote() {
     const desc = (document.getElementById('desc').value || "").toLowerCase();
     if (!machine) return alert("Please select machine type");
 
-    let laborHours = 3, partsCost = 180, partsDesc = "Diagnostic + basic service";
-    if (desc.includes("locked") || desc.includes("seized") || desc.includes("engine")) {
-        laborHours = 14; partsCost = 1250; partsDesc = "Full engine rebuild kit";
-    } else if (desc.includes("carb") || desc.includes("overflow")) {
-        laborHours = 4; partsCost = 280; partsDesc = "Carburetor rebuild kit + overflow line";
+    let laborHours = 3;
+    let partsCost = 180;
+    let partsDesc = "Diagnostic + basic service";
+
+    if (desc.includes("locked") || desc.includes("seized") || desc.includes("engine") || desc.includes("rebuild")) {
+        laborHours = 14;
+        partsCost = 1250;
+        partsDesc = "Full engine rebuild kit (pistons, crank, bearings, gaskets, seals)";
+    } else if (desc.includes("carb") || desc.includes("overflow") || desc.includes("leaking")) {
+        laborHours = 4;
+        partsCost = 280;
+        partsDesc = "Carburetor rebuild kit + overflow line + gaskets";
+    } else if (desc.includes("knock") || desc.includes("noise")) {
+        laborHours = 8;
+        partsCost = 650;
+        partsDesc = "Piston kit, rings, bearings + gaskets";
     }
 
     laborHours = Math.max(2, laborHours);
     const laborCost = laborHours * 125;
     const grandTotal = laborCost + partsCost;
 
-    let html = `<p><strong>Machine:</strong> ${machine.toUpperCase()}</p>
-                <p><strong>Issue:</strong> ${desc}</p>
-                <p class="mt-4">${partsDesc}</p>
-                <p class="mt-6"><strong>Labor:</strong> ${laborHours} hrs @ $125/hr = $${laborCost}</p>
-                <p><strong>Parts est.:</strong> $${partsCost}</p>`;
+    let html = `
+        <p><strong>Machine:</strong> ${machine.toUpperCase()}</p>
+        <p><strong>Issue:</strong> ${desc}</p>
+        <p class="mt-4 font-medium">${partsDesc}</p>
+        <p class="mt-6"><strong>Labor:</strong> ${laborHours} hrs @ $125/hr = $${laborCost}</p>
+        <p><strong>Parts est.:</strong> $${partsCost}</p>
+    `;
+
     document.getElementById('details').innerHTML = html;
     document.getElementById('grandTotal').innerHTML = `Total Estimate: <span class="text-white">$${grandTotal}</span>`;
     document.getElementById('result').classList.remove('hidden');
@@ -148,12 +160,19 @@ function generateDetailedQuote() {
 function submitReview() {
     const name = document.getElementById('reviewName').value.trim();
     const text = document.getElementById('reviewText').value.trim();
-    if (!name || !text) return alert("Please enter name and review");
-    const newReview = `<div class="bg-zinc-800 p-8 rounded-3xl"><p class="italic">"${text}"</p><p class="mt-6 text-emerald-400">- ${name}</p></div>`;
+    if (!name || !text) return alert("Please enter your name and a review");
+
+    const newReview = `
+        <div class="bg-zinc-800 p-8 rounded-3xl">
+            <p class="italic">"${text}"</p>
+            <p class="mt-6 text-emerald-400">- ${name}</p>
+        </div>
+    `;
+    
     document.getElementById('reviewsList').innerHTML += newReview;
     document.getElementById('reviewName').value = '';
     document.getElementById('reviewText').value = '';
-    alert("Thank you for your review!");
+    alert("Thank you! Your review has been added.");
 }
 </script>
 </body>
