@@ -7,74 +7,89 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background: #0a0a0a; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
         .heading { font-family: 'Space Grotesk', sans-serif; }
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('https://source.unsplash.com/random/1920x1080/?atv,dirt,trail') center/cover;
-            animation: subtlePan 40s infinite alternate ease-in-out;
-        }
-        @keyframes subtlePan { from { background-position: 30% 50%; } to { background-position: 70% 50%; } }
-        .glow { box-shadow: 0 0 25px rgba(16, 185, 129, 0.5); }
     </style>
 </head>
-<body class="text-zinc-200">
+<body class="bg-black text-white">
 
-<header class="hero min-h-screen flex items-center relative">
-    <div class="max-w-5xl mx-auto px-6 text-center z-10">
-        <img src="48972706-9F12-4F85-A188-CA50E857E173.png" alt="Cypress Logo" class="mx-auto max-w-[650px] drop-shadow-2xl mb-8">
-        <p class="text-emerald-400 text-3xl mb-10">VERNON, FL • BUILT FOR THE TRAILS</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+18508498803" class="bg-emerald-600 hover:bg-emerald-500 px-10 py-5 rounded-2xl text-xl font-semibold flex items-center gap-3 glow">📞 (850) 849-8803</a>
-            <a href="#quote" class="bg-white text-zinc-900 hover:bg-amber-300 px-10 py-5 rounded-2xl text-xl font-semibold">GET DETAILED QUOTE</a>
-        </div>
-        <p class="mt-10 text-lg">4046 Dorch Circle, Vernon, FL 32462</p>
-    </div>
-</header>
+<!-- HERO -->
+<div class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-12 bg-black">
+    <img src="48972706-9F12-4F85-A188-CA50E857E173.png" alt="Cypress Logo" class="max-w-full w-[320px] md:w-[500px] mx-auto mb-8">
+    
+    <p class="text-emerald-400 text-xl md:text-2xl mb-10">VERNON, FL • BUILT FOR THE TRAILS</p>
+    
+    <a href="tel:+18508498803" class="block w-full max-w-xs bg-emerald-600 hover:bg-emerald-500 py-4 rounded-2xl text-xl font-medium mb-4 flex items-center justify-center gap-3 mx-auto">
+        <i class="fas fa-phone"></i> (850) 849-8803
+    </a>
+    
+    <a href="#quote" class="block w-full max-w-xs bg-white text-black py-4 rounded-2xl text-xl font-semibold mx-auto">
+        GET DETAILED QUOTE
+    </a>
+    
+    <p class="mt-12 text-sm">4046 Dorch Circle, Vernon, FL 32462</p>
+</div>
 
-<!-- Services & Pricing sections (kept short for brevity - full previous version) -->
-
-<section id="quote" class="py-24 bg-zinc-900">
-    <!-- Smart Quote Tool from previous version - keep as is or paste full if needed -->
-    <div class="max-w-3xl mx-auto px-6">
-        <h2 class="heading text-5xl font-bold text-center mb-12">Get Detailed Repair Quote</h2>
-        <!-- Paste the full quote form from previous response here if you want it all in one file -->
-        <!-- For space, assume it's there - or reply if you need the full combined file -->
-    </div>
-</section>
-
-<!-- NEW TIP / DONATION SECTION -->
-<section class="py-20 bg-black">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="heading text-5xl font-bold mb-6 text-emerald-400">Support Cypress ATV</h2>
-        <p class="text-xl mb-10 max-w-md mx-auto">Love our honest work? Fuel the shop with a tip or donation. Every dollar helps us keep serving local riders better.</p>
+<!-- Quote -->
+<section id="quote" class="py-16 bg-zinc-900 px-4">
+    <div class="max-w-md mx-auto">
+        <h2 class="heading text-4xl font-bold text-center mb-10">Get Detailed Quote</h2>
         
-        <div class="bg-zinc-900 rounded-3xl p-12 max-w-md mx-auto">
-            <div class="flex justify-center mb-8">
-                <i class="fas fa-heart text-6xl text-red-500"></i>
-            </div>
-            <p class="text-2xl mb-8">Send any amount via Cash App</p>
-            <a href="https://cash.app/$StrangeDev" target="_blank" 
-               class="inline-flex items-center gap-4 bg-green-600 hover:bg-green-500 text-white text-3xl font-bold px-16 py-8 rounded-3xl glow transition-all">
-                <i class="fab fa-cash-app"></i> $StrangeDev
-            </a>
-            <p class="text-sm text-zinc-500 mt-8">Thank you — every tip keeps the tools turning and bikes riding strong!</p>
+        <select id="machine" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl p-5 mb-6 text-lg">
+            <option value="">Select Machine Type</option>
+            <option value="atv">ATV</option>
+            <option value="utv">Side-by-Side (UTV)</option>
+            <option value="dirtbike">Dirt Bike</option>
+        </select>
+        
+        <textarea id="desc" rows="5" class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl p-6 mb-6" placeholder="Describe the issue..."></textarea>
+        
+        <button onclick="generateDetailedQuote()" class="w-full bg-emerald-600 py-5 rounded-2xl text-xl font-semibold">ANALYZE & QUOTE</button>
+        
+        <div id="result" class="hidden mt-10 p-8 bg-black rounded-3xl border border-emerald-700">
+            <div id="details" class="space-y-4"></div>
+            <div id="grandTotal" class="text-5xl font-bold text-emerald-400 mt-8 text-center"></div>
+            <a href="tel:+18508498803" class="block mt-10 w-full bg-white text-black py-5 rounded-2xl font-bold text-center">CALL TO BOOK</a>
         </div>
     </div>
 </section>
 
-<!-- Contact -->
-<section class="py-20 bg-zinc-900 text-center">
-    <p class="text-2xl">4046 Dorch Circle, Vernon, FL 32462</p>
-    <a href="tel:+18508498803" class="text-4xl font-semibold text-emerald-400 mt-6 block">(850) 849-8803</a>
+<!-- Donation -->
+<section class="py-16 bg-black text-center px-4">
+    <h2 class="heading text-4xl font-bold mb-6">Support the Shop</h2>
+    <p class="mb-8">Tip or donate any amount</p>
+    <a href="https://cash.app/$StrangeDev" target="_blank" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white text-2xl font-bold px-12 py-6 rounded-3xl">
+        <i class="fab fa-cash-app"></i> $StrangeDev
+    </a>
 </section>
 
-<footer class="py-12 bg-black text-center text-zinc-500">
-    <p>&copy; 2026 Cypress ATV & Cycle Service • Honest Work for Real Riders</p>
+<footer class="py-10 text-center text-zinc-500 text-sm">
+    © 2026 Cypress ATV & Cycle Service • Vernon, FL
 </footer>
 
 <script>
-    // Paste your previous calculateSmartQuote / generateDetailedQuote function here
+function generateDetailedQuote() {
+    const machine = document.getElementById('machine').value;
+    const desc = (document.getElementById('desc').value || "").toLowerCase();
+    if (!machine) return alert("Select machine type");
+
+    let labor = 3, parts = 150;
+    if (desc.includes("engine") || desc.includes("rebuild")) { labor = 9; parts = 550; }
+    else if (desc.includes("carb") || desc.includes("carburetor")) { labor = 3.5; parts = 180; }
+    else if (desc.includes("valve") || desc.includes("gasket")) { labor = 5; parts = 250; }
+
+    const laborCost = Math.max(2, labor) * 125;
+    const total = laborCost + parts;
+
+    document.getElementById('details').innerHTML = `
+        <p><strong>Machine:</strong> ${machine.toUpperCase()}</p>
+        <p><strong>Est. Labor:</strong> ${labor} hrs @ $125/hr = $${laborCost}</p>
+        <p><strong>Est. Parts:</strong> $${parts}</p>
+    `;
+    document.getElementById('grandTotal').innerHTML = `Total: <span class="text-white">$${total}</span>`;
+    document.getElementById('result').classList.remove('hidden');
+}
 </script>
 </body>
 </html>
