@@ -82,7 +82,6 @@
 <section class="py-20 bg-zinc-900">
     <div class="max-w-4xl mx-auto px-6">
         <h2 class="heading text-4xl font-bold text-center mb-12">What Riders Say</h2>
-        
         <div id="reviewsList" class="space-y-8 mb-12">
             <div class="bg-zinc-800 p-8 rounded-3xl">
                 <p class="italic">"Best ATV shop in the area. Fixed my TRX fast and honest pricing!"</p>
@@ -94,13 +93,21 @@
             </div>
         </div>
 
-        <!-- Leave Review Form -->
         <div class="bg-zinc-800 p-8 rounded-3xl">
-            <h3 class="text-2xl font-semibold mb-6 text-center">Leave Your Review</h3>
+            <h3 class="text-2xl font-semibold mb-6 text-center">Leave a Review</h3>
             <input id="reviewName" type="text" placeholder="Your Name" class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-4 mb-4 text-white">
             <textarea id="reviewText" rows="4" placeholder="Write your review here..." class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-4 mb-6 text-white"></textarea>
             <button onclick="submitReview()" class="w-full bg-emerald-600 py-4 rounded-2xl text-lg font-semibold">Submit Review</button>
         </div>
+    </div>
+</section>
+
+<!-- Google Maps -->
+<section class="py-12 bg-black">
+    <div class="max-w-4xl mx-auto px-6">
+        <h2 class="heading text-3xl font-bold text-center mb-6">Find Us Here</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3484.5!2d-85.512!3d30.612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDM2JzQzLjAiTiA4NcKwMzAnNDMuMCJX!5e0!3m2!1sen!2sus!4v1746130000000" width="100%" height="400" style="border:0;border-radius:16px;" allowfullscreen="" loading="lazy"></iframe>
+        <p class="text-center mt-4 text-sm">4046 Dorch Circle, Vernon, FL 32462</p>
     </div>
 </section>
 
@@ -160,14 +167,12 @@ function generateDetailedQuote() {
 function submitReview() {
     const name = document.getElementById('reviewName').value.trim();
     const text = document.getElementById('reviewText').value.trim();
-    if (!name || !text) return alert("Please enter your name and a review");
+    if (!name || !text) return alert("Please enter your name and review");
 
-    const newReview = `
-        <div class="bg-zinc-800 p-8 rounded-3xl">
-            <p class="italic">"${text}"</p>
-            <p class="mt-6 text-emerald-400">- ${name}</p>
-        </div>
-    `;
+    const newReview = `<div class="bg-zinc-800 p-8 rounded-3xl">
+        <p class="italic">"${text}"</p>
+        <p class="mt-6 text-emerald-400">- ${name}</p>
+    </div>`;
     
     document.getElementById('reviewsList').innerHTML += newReview;
     document.getElementById('reviewName').value = '';
