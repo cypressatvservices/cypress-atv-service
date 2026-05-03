@@ -56,6 +56,12 @@
                 linear-gradient(90deg, rgba(16,185,129,0.08) 1px, transparent 1px);
             background-size: 50px 50px;
         }
+
+        /* FIXED MOBILE MENU - NO TRANSPARENCY */
+        #mobileMenu {
+            background-color: #111113 !important;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.97);
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 overflow-x-hidden">
@@ -96,14 +102,14 @@
         </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="menu hidden md:hidden fixed inset-0 bg-zinc-950 z-50 pt-20 px-6">
+    <!-- FIXED MOBILE MENU -->
+    <div id="mobileMenu" class="menu hidden md:hidden fixed inset-0 bg-zinc-950 z-50 pt-20 px-6 overflow-y-auto">
         <div class="flex flex-col gap-6 text-xl font-medium">
-            <a href="#services" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Services</a>
-            <a href="#quote" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Get Quote</a>
-            <a href="#reviews" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Reviews</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">About Us</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Contact</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-700 text-white">Services</a>
+            <a href="#quote" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-700 text-white">Get Quote</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-700 text-white">Reviews</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-700 text-white">About Us</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-700 text-white">Contact</a>
             
             <div class="pt-6">
                 <a href="https://www.facebook.com/share/1GeSFnSmkY/?mibextid=wwXIfr" target="_blank"
@@ -223,7 +229,6 @@
             </button>
         </div>
 
-        <!-- Quote Result -->
         <div id="result" class="hidden mt-12 p-10 bg-zinc-900 rounded-3xl border border-emerald-600 shadow-2xl">
             <div id="details" class="space-y-6 text-zinc-300"></div>
             <div id="grandTotal" class="text-6xl font-bold text-emerald-400 mt-12 text-center tracking-tighter"></div>
@@ -481,8 +486,6 @@ function submitReview() {
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
     renderReviews();
-    
-    // Tailwind script already loaded
     console.log('%cCypress ATV & Cycle Service - Professional Site Loaded', 'color:#10b981; font-family:monospace');
 });
 </script>
